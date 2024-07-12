@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import "express-async-errors";
 import cors from "cors";
+import sequelize from "./database/db";
 
 import { router } from "./routes";
 
@@ -10,7 +11,6 @@ app.use(cors());
 
 app.use(router);
 
-// Middleware de tratamento de erros
 app.use((err: Error, req: Request, res: Response, __next: NextFunction) => {
    if (err instanceof Error) {
       return res.status(400).json({
@@ -23,6 +23,14 @@ app.use((err: Error, req: Request, res: Response, __next: NextFunction) => {
    });
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
-app.listen(port, () => console.log(`Server Online on port ${port}`));
+sequelize
+   // .sync({ force: false })
+   .sync()
+   .then(() => {
+      app.listen(port, () => console.log(`Server online on port ${port}`));
+   })
+   .catch((err) => {
+      console.error("Unable to connect to the database:", err);
+   });
