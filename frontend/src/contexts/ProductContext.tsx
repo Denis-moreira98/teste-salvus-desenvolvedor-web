@@ -29,11 +29,13 @@ function ProductProvider({ children }: ProductProviderProps) {
       async function fetchProducts() {
          setLoading(true);
          try {
-            const response = await api.get<Product[]>(
-               `${import.meta.env.VITE_API_URL}/products`
+            const response = await api.get<Product[]>("/products");
+            const sortedProducts = response.data.sort(
+               (a, b) =>
+                  new Date(b.createdAt).getTime() -
+                  new Date(a.createdAt).getTime()
             );
-            setProducts(response.data);
-            // console.log(response.data);
+            setProducts(sortedProducts);
          } catch (error) {
             console.error("Erro ao buscar produtos:", error);
          } finally {
