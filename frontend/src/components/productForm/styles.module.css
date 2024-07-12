@@ -1,0 +1,25 @@
+.form {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.buttons {
+   display: flex;
+   justify-content: flex-end;
+   gap: 1rem;
+}
+
+.cancelButton {
+   background: #ccc;
+   border: none;
+   padding: 8px 16px;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: all 0.5s;
+   font-weight: bold;
+}
+
+.cancelButton:hover {
+   background: #aaa;
+}
