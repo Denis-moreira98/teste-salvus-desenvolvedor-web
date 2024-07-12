@@ -41,6 +41,7 @@ export function Home() {
                      <th className={styles.th}>Nome</th>
                      <th className={styles.th}>Descrição</th>
                      <th className={styles.th}>Preço</th>
+                     <th className={styles.th}>Criado em</th>
                      <th className={`${styles.th} ${styles.textCenter}`}>
                         Opções
                      </th>
@@ -54,12 +55,13 @@ export function Home() {
                         name={product.name}
                         description={product.description}
                         price={product.price}
+                        createdAt={product.createdAt}
                      />
                   ))}
                </tbody>
                <tfoot>
                   <tr className={styles.tableFooter}>
-                     <td className={styles.tableFooterCell} colSpan={4}></td>
+                     <td className={styles.tableFooterCell} colSpan={5}></td>
                   </tr>
                </tfoot>
             </table>
