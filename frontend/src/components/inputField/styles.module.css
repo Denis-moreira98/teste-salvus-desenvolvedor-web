@@ -1,0 +1,21 @@
+.inputField {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+label {
+   font-weight: 500;
+}
+
+input {
+   padding: 8px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   color: #5f5f5f;
+}
+
+.error {
+   color: red;
+   font-size: 0.875rem;
+}
