@@ -2,6 +2,7 @@ import { BiSolidEdit } from "react-icons/bi";
 import { FaTrashAlt } from "react-icons/fa";
 import styles from "./styles.module.css";
 import api from "../../services/api/api";
+import { useNavigate } from "react-router-dom";
 
 interface ProductRowProps {
    id: number;
@@ -11,9 +12,12 @@ interface ProductRowProps {
 }
 
 export function ProductRow({ id, name, description, price }: ProductRowProps) {
+   const navigate = useNavigate();
+
    async function handleDeleteProduct(id: number) {
       try {
          await api.delete(`/products/${id}`);
+         navigate(0);
       } catch (error) {
          console.log(error);
       }
