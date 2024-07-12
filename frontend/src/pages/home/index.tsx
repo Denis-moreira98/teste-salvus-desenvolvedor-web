@@ -1,15 +1,25 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { SearchInput } from "../../components/inputSearch";
 import { ProductRow } from "../../components/productRow";
 import styles from "./styles.module.css";
 import { ProductContext } from "../../contexts/ProductContext";
 
 export function Home() {
    const { products, loading } = useContext(ProductContext);
+   const [searchTerm, setSearchTerm] = useState("");
+
+   const filteredProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+   );
 
    return (
       <section className={styles.sectionContainer}>
          <div className={styles.divSearch}>
             <button className={styles.button}>Adicionar Produtos</button>
+            <SearchInput
+               searchTerm={searchTerm}
+               setSearchTerm={setSearchTerm}
+            />
          </div>
          <table className={styles.table}>
             <thead>
@@ -28,7 +38,7 @@ export function Home() {
                      <td colSpan={4}>Carregando...</td>
                   </tr>
                ) : (
-                  products.map((product) => (
+                  filteredProducts.map((product) => (
                      <ProductRow
                         key={product.id}
                         id={product.id}
