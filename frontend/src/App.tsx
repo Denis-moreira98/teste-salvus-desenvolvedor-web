@@ -1,11 +1,18 @@
-function App() {
-   return (
-      <>
-         <div>
-            <h1>TESTE TECNICO SALVUS</h1>
-         </div>
-      </>
-   );
-}
+import { createBrowserRouter } from "react-router-dom";
 
-export default App;
+import { Layout } from "./components/ui/layout";
+import { Home } from "./pages/home";
+
+const router = createBrowserRouter([
+   {
+      element: <Layout />,
+      children: [
+         {
+            path: "/",
+            element: <Home />,
+         },
+      ],
+   },
+]);
+
+export { router };
