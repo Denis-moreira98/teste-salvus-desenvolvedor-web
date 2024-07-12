@@ -6,7 +6,11 @@ const createProductValidator = [
       .isString()
       .notEmpty()
       .withMessage("Description is required"),
-   body("price").isString().withMessage("Price is required"),
+   body("price")
+      .isNumeric()
+      .withMessage("Price must be a number")
+      .notEmpty()
+      .withMessage("Price is required"),
 ];
 
 export { createProductValidator };
