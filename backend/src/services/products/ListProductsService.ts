@@ -1,4 +1,4 @@
-import Product from "../models/productModel";
+import Product from "../../models/productModel";
 
 class ListProductsService {
    public async execute() {

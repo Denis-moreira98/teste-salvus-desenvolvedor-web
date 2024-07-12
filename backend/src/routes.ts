@@ -1,11 +1,11 @@
 import { Router } from "express";
 
 //Controllers
-import CreateProductController from "./controllers/CreateProductController";
-import ListProductsController from "./controllers/ListProductsController";
-import GetProductByIdController from "./controllers/GetProductByIdController";
-import UpdateProductController from "./controllers/UpdateProductController";
-import DeleteProductController from "./controllers/DeleteProductController";
+import CreateProductController from "./controllers/products/CreateProductController";
+import ListProductsController from "./controllers/products/ListProductsController";
+import GetProductByIdController from "./controllers/products/GetProductByIdController";
+import UpdateProductController from "./controllers/products/UpdateProductController";
+import DeleteProductController from "./controllers/products/DeleteProductController";
 
 //Middleware
 import validationMiddleware from "./middlewares/validationMiddleware";

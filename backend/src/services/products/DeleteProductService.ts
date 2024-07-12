@@ -1,13 +1,13 @@
-import Product from "../models/productModel";
+import Product from "../../models/productModel";
 
-class GetProductByIdService {
+class DeleteProductService {
    public async execute(productId: string) {
       const product = await Product.findByPk(productId);
       if (!product) {
          throw new Error("Product not found");
       }
-      return product;
+      await product.destroy();
    }
 }
 
-export default GetProductByIdService;
+export default DeleteProductService;
