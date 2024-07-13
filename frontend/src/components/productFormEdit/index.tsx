@@ -65,7 +65,7 @@ export function ProductFormEdit({
    return (
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
          <h1>
-            Editar produto <strong>{initialData.name}</strong>
+            Editar produto: <strong>{initialData.name}</strong>
          </h1>
 
          <InputField
