@@ -7,6 +7,7 @@ import styles from "../productForm/styles.module.css";
 import api from "../../services/api/api";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 const productSchema = z.object({
    name: z.string().min(1, "Nome é obrigatório."),
@@ -50,8 +51,13 @@ export function ProductFormEdit({
             description: data.description,
             price: data.price,
          });
-         navigate(0);
+         toast.success("Produto editado com sucesso!", { autoClose: 1500 });
+
+         setTimeout(() => {
+            navigate(0);
+         }, 1500);
       } catch (error) {
+         toast.error("Erro ao atualizar produto!", { autoClose: 1500 });
          console.error("Erro ao atualizar produto:", error);
       }
    }
@@ -59,7 +65,7 @@ export function ProductFormEdit({
    return (
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
          <h1>
-            Editar produto <span>{initialData.name}</span>
+            Editar produto <strong>{initialData.name}</strong>
          </h1>
 
          <InputField

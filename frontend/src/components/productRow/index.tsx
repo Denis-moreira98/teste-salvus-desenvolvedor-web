@@ -31,13 +31,13 @@ export function ProductRow({
    async function handleDeleteProduct(id: number) {
       try {
          await api.delete(`/products/${id}`);
-         toast.success("Produto deletado com sucesso!", { autoClose: 2000 });
+         toast.success("Produto deletado com sucesso!", { autoClose: 1500 });
          setTimeout(() => {
             navigate(0);
-         }, 2000);
+         }, 1500);
       } catch (error) {
          console.error(error);
-         toast.error("Erro ao deletar o produto.");
+         toast.error("Erro ao deletar o produto!", { autoClose: 1500 });
       }
    }
 

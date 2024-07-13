@@ -6,6 +6,7 @@ import { SubmitButton } from "../submitButton";
 import styles from "./styles.module.css";
 import api from "../../services/api/api";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const productSchema = z.object({
    name: z.string().min(1, "Nome é obrigatório."),
@@ -36,9 +37,14 @@ export function ProductForm({ onCancel }: ProductFormProps) {
             description: data.description,
             price: data.price,
          });
-         navigate(0);
+         toast.success("Produto cadastrado com sucesso!", { autoClose: 1500 });
+
+         setTimeout(() => {
+            navigate(0);
+         }, 1500);
       } catch (error) {
          console.error("Erro ao cadastrar produto:", error);
+         toast.error("Erro ao cadastrar produto!", { autoClose: 1500 });
       }
    };
 
