@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
+import { FaSpinner } from "react-icons/fa";
 
 interface SubmitButtonProps
    extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,8 +13,12 @@ export function SubmitButton({
    ...props
 }: SubmitButtonProps) {
    return (
-      <button className={styles.submitButton} {...props} disabled={isLoading}>
-         {isLoading ? "Cadastrando..." : children}
+      <button
+         className={`${styles.submitButton} ${isLoading ? styles.loading : ""}`}
+         {...props}
+         disabled={isLoading}
+      >
+         {isLoading ? <FaSpinner className={styles.spinner} /> : children}
       </button>
    );
 }
