@@ -4,10 +4,18 @@
    gap: 1rem;
 }
 
+.form h1 {
+   text-align: center;
+}
+
+.form span {
+   color: #4caf50;
+}
+
 .buttons {
    display: flex;
    justify-content: flex-end;
-   gap: 1rem;
+   gap: 0.4rem;
 }
 
 .cancelButton {
@@ -18,6 +26,9 @@
    cursor: pointer;
    transition: all 0.5s;
    font-weight: bold;
+
+   min-width: 100px;
+   height: 35px;
 }
 
 .cancelButton:hover {

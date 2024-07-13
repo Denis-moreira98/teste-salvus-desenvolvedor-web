@@ -1,11 +1,12 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { InputField } from "../inputField";
 import { SubmitButton } from "../submitButton";
-import styles from "./styles.module.css";
+import styles from "../productForm/styles.module.css";
 import api from "../../services/api/api";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const productSchema = z.object({
    name: z.string().min(1, "Nome é obrigatório."),
@@ -17,34 +18,49 @@ type ProductFormInputs = z.infer<typeof productSchema>;
 
 interface ProductFormProps {
    onCancel: () => void;
+   productId: number;
+   initialData: { name: string; description: string; price: string };
 }
 
-export function ProductForm({ onCancel }: ProductFormProps) {
+export function ProductFormEdit({
+   onCancel,
+   productId,
+   initialData,
+}: ProductFormProps) {
    const navigate = useNavigate();
    const {
       register,
       handleSubmit,
+      setValue,
       formState: { errors, isSubmitting },
    } = useForm<ProductFormInputs>({
       resolver: zodResolver(productSchema),
    });
 
-   const onSubmit: SubmitHandler<ProductFormInputs> = async (data) => {
+   useEffect(() => {
+      setValue("name", initialData.name);
+      setValue("description", initialData.description);
+      setValue("price", parseFloat(initialData.price));
+   }, [initialData, setValue]);
+
+   async function onSubmit(data: ProductFormInputs) {
       try {
-         await api.post("/products", {
+         await api.put(`/products/${productId}`, {
             name: data.name,
             description: data.description,
             price: data.price,
          });
          navigate(0);
       } catch (error) {
-         console.error("Erro ao cadastrar produto:", error);
+         console.error("Erro ao atualizar produto:", error);
       }
-   };
+   }
 
    return (
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-         <h1>Cadastrar novo produto</h1>
+         <h1>
+            Editar produto <span>{initialData.name}</span>
+         </h1>
 
          <InputField
             placeholder="Digite o nome do produto"
@@ -74,7 +90,7 @@ export function ProductForm({ onCancel }: ProductFormProps) {
             >
                Cancelar
             </button>
-            <SubmitButton isLoading={isSubmitting}>Cadastrar</SubmitButton>
+            <SubmitButton isLoading={isSubmitting}>Salvar</SubmitButton>
          </div>
       </form>
    );
