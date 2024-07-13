@@ -35,36 +35,45 @@ export function Home() {
                <LoadingSpinner />
             </div>
          ) : (
-            <table className={styles.table}>
-               <thead>
-                  <tr>
-                     <th className={styles.th}>Nome</th>
-                     <th className={styles.th}>Descrição</th>
-                     <th className={styles.th}>Preço</th>
-                     <th className={styles.th}>Criado em</th>
-                     <th className={`${styles.th} ${styles.textCenter}`}>
-                        Opções
-                     </th>
-                  </tr>
-               </thead>
-               <tbody>
-                  {filteredProducts.map((product) => (
-                     <ProductRow
-                        key={product.id}
-                        id={product.id}
-                        name={product.name}
-                        description={product.description}
-                        price={product.price}
-                        createdAt={product.createdAt}
-                     />
-                  ))}
-               </tbody>
-               <tfoot>
-                  <tr className={styles.tableFooter}>
-                     <td className={styles.tableFooterCell} colSpan={5}></td>
-                  </tr>
-               </tfoot>
-            </table>
+            <>
+               {products.length === 0 ? (
+                  <h3>Ops, nenhum produto encontrado...</h3>
+               ) : (
+                  <table className={styles.table}>
+                     <thead>
+                        <tr>
+                           <th className={styles.th}>Nome</th>
+                           <th className={styles.th}>Descrição</th>
+                           <th className={styles.th}>Preço</th>
+                           <th className={styles.th}>Criado em</th>
+                           <th className={`${styles.th} ${styles.textCenter}`}>
+                              Opções
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {filteredProducts.map((product) => (
+                           <ProductRow
+                              key={product.id}
+                              id={product.id}
+                              name={product.name}
+                              description={product.description}
+                              price={product.price}
+                              createdAt={product.createdAt}
+                           />
+                        ))}
+                     </tbody>
+                     <tfoot>
+                        <tr className={styles.tableFooter}>
+                           <td
+                              className={styles.tableFooterCell}
+                              colSpan={5}
+                           ></td>
+                        </tr>
+                     </tfoot>
+                  </table>
+               )}
+            </>
          )}
 
          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
