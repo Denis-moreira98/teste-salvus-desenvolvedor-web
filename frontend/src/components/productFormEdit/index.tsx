@@ -12,7 +12,12 @@ import { toast } from "react-toastify";
 const productSchema = z.object({
    name: z.string().min(1, "Nome é obrigatório."),
    description: z.string().min(1, "Descrição é obrigatória."),
-   price: z.number().min(0, "Preço é obrigatório."),
+   price: z
+      .number({
+         invalid_type_error: "Preço deve ser um número.",
+         required_error: "Preço é obrigatório.",
+      })
+      .min(0, "Preço deve ser maior ou igual a zero."),
 });
 
 type ProductFormInputs = z.infer<typeof productSchema>;
@@ -52,6 +57,7 @@ export function ProductFormEdit({
             price: data.price,
          });
          toast.success("Produto editado com sucesso!", { autoClose: 1500 });
+         onCancel();
 
          setTimeout(() => {
             navigate(0);
