@@ -98,3 +98,8 @@
       font-size: 12px;
    }
 }
+@media screen and (max-width: 370px) {
+   .button {
+      font-size: 11px;
+   }
+}

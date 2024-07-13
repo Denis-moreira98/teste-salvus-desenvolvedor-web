@@ -1,4 +1,6 @@
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+import { IoIosCloseCircle } from "react-icons/io";
 
 interface ModalProps {
    isOpen: boolean;
@@ -7,16 +9,37 @@ interface ModalProps {
 }
 
 export function Modal({ isOpen, onClose, children }: ModalProps) {
-   if (!isOpen) return null;
+   const [visible, setVisible] = useState(isOpen);
+
+   useEffect(() => {
+      if (isOpen) {
+         setVisible(true);
+      } else {
+         const timer = setTimeout(() => {
+            setVisible(false);
+         }, 500);
+         return () => clearTimeout(timer);
+      }
+   }, [isOpen]);
 
    return (
-      <div className={styles.overlay}>
-         <div className={styles.modal}>
-            <button className={styles.closeButton} onClick={onClose}>
-               X
-            </button>
-            {children}
+      visible && (
+         <div
+            className={`${styles.overlay} ${
+               !isOpen ? styles.overlayHidden : ""
+            }`}
+         >
+            <div
+               className={`${styles.modal} ${
+                  !isOpen ? styles.modalHidden : ""
+               }`}
+            >
+               <button className={styles.closeButton} onClick={onClose}>
+                  <IoIosCloseCircle size={26} color="red" />
+               </button>
+               {children}
+            </div>
          </div>
-      </div>
+      )
    );
 }
