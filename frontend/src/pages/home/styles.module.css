@@ -85,3 +85,11 @@
    text-align: left;
    padding-left: 0.5rem;
 }
+
+@media screen and (max-width: 450px) {
+   .table thead th:nth-last-child(2),
+   .table tbody td:nth-last-child(2),
+   .table tfoot td:nth-last-child(2) {
+      display: none;
+   }
+}

@@ -48,9 +48,13 @@ export function ProductRow({
       <>
          <tr className={styles.tableRow}>
             <td className={styles.tableCell}>{name}</td>
-            <td className={styles.tableCell}>{description}</td>
+            <td className={`${styles.tableCell} ${styles.descriptionCell}`}>
+               {description}
+            </td>
             <td className={styles.tableCell}>{formattedPrice}</td>
-            <td className={styles.tableCell}>{formattedDate}</td>
+            <td className={`${styles.tableCell} ${styles.createdCell}`}>
+               {formattedDate}
+            </td>
             <td className={styles.actionButtons}>
                <button
                   className={`${styles.actionButton} ${styles.blue}`}
