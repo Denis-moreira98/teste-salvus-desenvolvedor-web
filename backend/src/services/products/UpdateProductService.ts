@@ -1,4 +1,4 @@
-import Product from "../models/productModel";
+import Product from "../../models/productModel";
 
 class UpdateProductService {
    public async execute(productId: string, productData: Partial<Product>) {

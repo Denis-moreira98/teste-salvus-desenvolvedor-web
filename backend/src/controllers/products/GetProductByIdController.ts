@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import GetProductByIdService from "../services/GetProductByIdService";
+import GetProductByIdService from "../../services/products/GetProductByIdService";
 
 class GetProductByIdController {
    public async handle(req: Request, res: Response) {

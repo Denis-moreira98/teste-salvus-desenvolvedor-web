@@ -1,0 +1,100 @@
+.sectionContainer {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+
+   margin-top: 3rem;
+   width: 100%;
+   max-width: 1100px;
+   margin: auto;
+   margin-top: 2rem;
+   padding: 8px;
+
+   margin-bottom: 7rem;
+}
+
+.sectionContainer h3 {
+   text-align: center;
+   margin-top: 2rem;
+}
+
+.divSearch {
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.button {
+   padding: 8px;
+   font-size: 14px;
+   border: 0;
+   border-radius: 8px;
+   color: white;
+   font-weight: bold;
+
+   background-color: #41a152;
+   transition: all 0.5s;
+}
+
+.button:hover {
+   background-color: #074b25;
+}
+
+/* Estilos da tabela*/
+
+.table {
+   width: 100%;
+   margin: 0.5rem 0;
+   overflow: hidden;
+   border-spacing: 0;
+}
+
+.table thead {
+   background-color: #41a152;
+   color: white;
+   height: 3rem;
+}
+
+.table thead th {
+   padding: 0.5rem;
+   font-weight: 500;
+   text-align: left;
+}
+
+.table thead th:first-child {
+   border-top-left-radius: 0.375rem;
+}
+
+.table thead th:last-child {
+   border-top-right-radius: 0.375rem;
+}
+
+.table th.text-center {
+   text-align: center;
+}
+
+.tableFooter {
+   background-color: #41a152;
+}
+
+.tableFooterCell {
+   border-bottom-left-radius: 0.375rem;
+   border-bottom-right-radius: 0.375rem;
+   height: 3rem;
+   text-align: left;
+   padding-left: 0.5rem;
+}
+
+@media screen and (max-width: 450px) {
+   .table thead th:nth-last-child(2),
+   .table tbody td:nth-last-child(2),
+   .table tfoot td:nth-last-child(2) {
+      display: none;
+   }
+}
+@media screen and (max-width: 390px) {
+   .button {
+      font-size: 12px;
+   }
+}

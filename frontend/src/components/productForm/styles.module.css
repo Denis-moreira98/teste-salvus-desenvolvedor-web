@@ -1,0 +1,36 @@
+.form {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.form h1 {
+   text-align: center;
+}
+
+.form strong {
+   color: #4caf50;
+}
+
+.buttons {
+   display: flex;
+   justify-content: flex-end;
+   gap: 0.4rem;
+}
+
+.cancelButton {
+   background: #ccc;
+   border: none;
+   padding: 8px 16px;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: all 0.5s;
+   font-weight: bold;
+
+   min-width: 100px;
+   height: 35px;
+}
+
+.cancelButton:hover {
+   background: #aaa;
+}
