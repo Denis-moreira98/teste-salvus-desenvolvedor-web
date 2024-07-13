@@ -26,3 +26,9 @@
    color: #6b7280;
    pointer-events: none;
 }
+
+@media screen and (max-width: 370px) {
+   .searchInputContainer {
+      width: 180px;
+   }
+}
