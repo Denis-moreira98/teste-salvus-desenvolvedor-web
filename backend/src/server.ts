@@ -26,8 +26,8 @@ app.use((err: Error, req: Request, res: Response, __next: NextFunction) => {
 const port = process.env.PORT;
 
 sequelize
-   .sync({ force: false })
-   // .sync()
+   // .sync({ force: false })
+   .sync()
    .then(() => {
       app.listen(port, () => console.log(`Server online on port ${port}`));
    })
