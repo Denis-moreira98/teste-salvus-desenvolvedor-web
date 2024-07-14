@@ -25,7 +25,6 @@
 
 .spinner {
    animation: spin 1s linear infinite;
-   margin-left: 6px;
    display: inline-block;
 }
 

@@ -18,7 +18,11 @@ export function SubmitButton({
          {...props}
          disabled={isLoading}
       >
-         {isLoading ? <FaSpinner className={styles.spinner} /> : children}
+         {isLoading ? (
+            <FaSpinner className={styles.spinner} size={18} />
+         ) : (
+            children
+         )}
       </button>
    );
 }

@@ -38,6 +38,7 @@ function ProductProvider({ children }: ProductProviderProps) {
             setProducts(sortedProducts);
          } catch (error) {
             console.error("Erro ao buscar produtos:", error);
+            setLoading(false);
          } finally {
             setLoading(false);
          }

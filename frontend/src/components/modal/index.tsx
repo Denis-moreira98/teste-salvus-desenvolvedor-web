@@ -34,11 +34,11 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
                   !isOpen ? styles.modalHidden : ""
                }`}
             >
-               <button className={styles.closeButton} onClick={onClose}>
-                  <IoIosCloseCircle size={26} color="red" />
-               </button>
                {children}
             </div>
+            <button className={styles.closeButton} onClick={onClose}>
+               <IoIosCloseCircle size={30} color="white" />
+            </button>
          </div>
       )
    );
