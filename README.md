@@ -23,9 +23,10 @@ Desenvolvimento de uma aplicação frontend utilizando React.js para consumir a 
 
 ### Requisitos Implementados:
 
--  Utilização de hooks do React para gerenciar o estado da aplicação.
--  Implementação de formulários para adicionar e atualizar produtos.
--  Adição de feedback visual para o usuário, como loading spinners, mensagens de sucesso/erro.
+-  Gerenciamento de Estado com Hooks: Utilização dos hooks do React para gerenciar o estado da aplicação, incluindo o uso de `useContext` para realizar requisições e compartilhar informações dos produtos no estado global.
+
+-  Implementação de formulários para adicionar e atualizar produtos com validação de campos, utilizando `react-hook-form` com `zod.`
+-  Adição de feedback visual para o usuário, como loading spinners, mensagens de sucesso/erro com `react-toast`.
 
 ### Integração e Deploy
 
@@ -34,6 +35,16 @@ Integração da aplicação frontend com a API backend e deploy das duas partes 
 ### Requisitos Implementados:
 
 -  Configuração do Git para versionamento do código. Criação de um repositório no GitHub e commits regulares com mensagens claras.
+
+## Para acessar a aplicação de deployada
+
+### Frontend
+
+Acesse https://teste-salvus-desenvolvedor-web.vercel.app/
+
+### Api do Backend
+
+Acesse https://teste-salvus-desenvolvedor-web-production.up.railway.app/
 
 ## Como rodar localmente na sua máquina
 
@@ -48,8 +59,6 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas em s
 ### Configuração do MySQL
 
 Após instalar o MySQL, crie um banco de dados e guarde as informações de acesso.
-
-Caso tenha dificuldade na instalação, assista a esta [videoaula](https://www.youtube.com/watch?v=s0YoPLbox40&ab_channel=AprendendodoIn%C3%ADciocomDaniel).
 
 ## Como clonar o repositório
 
@@ -105,7 +114,9 @@ yarn add
 
 ## Configurando as variáveis de ambiente
 
-Tanto na pasta raiz do backend quanto no frontend, há um arquivo .env.example.
+Tanto na pasta raiz do backend quanto no frontend, há um arquivo `.env.example.`
+
+É necessario renomear o arquivo para `.env`
 
 ### Backend
 
@@ -113,13 +124,11 @@ Configure o arquivo de acordo com as informações do banco de dados que foi cri
 
 ![Captura de tela 2024-07-13 204801](https://github.com/user-attachments/assets/621810dc-c229-4b14-8241-ac6a2a301d3d)
 
-
 ### Frontend
 
 No frontend, apenas passe a URL da API.
 
 ![Captura de tela 2024-07-13 204826](https://github.com/user-attachments/assets/8c6da94f-bf99-4b08-be57-116e920d4fbb)
-
 
 ## Rodando a aplicação
 
@@ -160,37 +169,39 @@ http://localhost:5173
 ```bash
 http://localhost:3000
 ```
+
 ### Rotas da API
 
-- POST /products: Cria um novo produto. </br>
- ![image](https://github.com/user-attachments/assets/50e28d4a-8c6b-4c9e-ae3d-7d29917679e2)
-- GET /products: Retorna todos os produtos.
-- GET /products/:id: Retorna um produto específico pelo ID.
-- PUT /products/:id: Atualiza um produto específico pelo ID. </br>
- ![image](https://github.com/user-attachments/assets/50e28d4a-8c6b-4c9e-ae3d-7d29917679e2)
-- DELETE /products/:id: Deleta um produto específico pelo ID.
-
-
+-  POST /products: Cria um novo produto. </br>
+   ![image](https://github.com/user-attachments/assets/50e28d4a-8c6b-4c9e-ae3d-7d29917679e2)
+-  GET /products: Retorna todos os produtos.
+-  GET /products/:id: Retorna um produto específico pelo ID.
+-  PUT /products/:id: Atualiza um produto específico pelo ID. </br>
+   ![image](https://github.com/user-attachments/assets/50e28d4a-8c6b-4c9e-ae3d-7d29917679e2)
+-  DELETE /products/:id: Deleta um produto específico pelo ID.
 
 ## Tecnologias Utilizadas
+
 ### Backend
-- Node.js com Express.js: Utilizei Node.js para o servidor devido à sua escalabilidade e processamento assíncrono. O Express.js facilitou a criação de rotas e middleware.
 
-- TypeScript: Adotei TypeScript para adicionar tipagem estática ao código JavaScript, aumentando a segurança e robustez.
+-  Node.js com Express.js: Utilizei Node.js para o servidor devido à sua escalabilidade e processamento assíncrono. O Express.js facilitou a criação de rotas e middleware.
 
-- MySQL com Sequelize: O MySQL foi escolhido como banco de dados relacional. O Sequelize ORM simplificou as operações de banco de dados com uma interface orientada a objetos.
+-  TypeScript: Adotei TypeScript para adicionar tipagem estática ao código JavaScript, aumentando a segurança e robustez.
 
-- Railway: A API foi implantada na plataforma Railway, que oferece deploy contínuo e serviços de banco de dados gerenciados.
+-  MySQL com Sequelize: O MySQL foi escolhido como banco de dados relacional. O Sequelize ORM simplificou as operações de banco de dados com uma interface orientada a objetos.
+
+-  Railway: A API foi implantada na plataforma Railway, que oferece deploy contínuo e serviços de banco de dados gerenciados.
 
 ### Frontend
-- React.js com TypeScript: Utilizei React.js para criar componentes reutilizáveis e TypeScript para tipagem estática e segurança do código.
 
-- Vite: Escolhi Vite como build tool para desenvolvimento rápido e eficiente.
+-  React.js com TypeScript: Utilizei React.js para criar componentes reutilizáveis e TypeScript para tipagem estática e segurança do código.
 
-- Axios: A biblioteca Axios foi usada para requisições HTTP à API, facilitando a comunicação entre frontend e backend.
+-  Vite: Escolhi Vite como build tool para desenvolvimento rápido e eficiente.
 
-- React Hook Form com Zod: Utilizei React Hook Form para gerenciamento de formulários e Zod para validação de dados.
+-  Axios: A biblioteca Axios foi usada para requisições HTTP à API, facilitando a comunicação entre frontend e backend.
 
-- React Toastify: Implementei React Toastify para exibir mensagens toast personalizadas, fornecendo feedback visual aos usuários.
+-  React Hook Form com Zod: Utilizei React Hook Form para gerenciamento de formulários e Zod para validação de dados.
 
-- Vercel: A aplicação frontend foi implantada na Vercel, que oferece deploy contínuo e escalabilidade eficiente.
+-  React Toastify: Implementei React Toastify para exibir mensagens toast personalizadas, fornecendo feedback visual aos usuários.
+
+-  Vercel: A aplicação frontend foi implantada na Vercel, que oferece deploy contínuo e escalabilidade eficiente.
