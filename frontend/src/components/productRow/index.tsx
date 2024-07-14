@@ -47,7 +47,7 @@ export function ProductRow({
    return (
       <>
          <tr className={styles.tableRow}>
-            <td className={styles.tableCell}>{name}</td>
+            <td className={`${styles.tableCell} ${styles.nameCell}`}>{name}</td>
             <td className={`${styles.tableCell} ${styles.descriptionCell}`}>
                {description}
             </td>

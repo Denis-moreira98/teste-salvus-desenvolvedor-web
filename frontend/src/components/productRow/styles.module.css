@@ -1,6 +1,6 @@
 .tableRow {
-   height: 3.3rem;
-   max-height: 5rem;
+   height: 3.6rem;
+   max-height: 6rem;
    background-color: #eceff1;
    transition: all 0.3s;
    padding-top: 22px;
@@ -10,16 +10,24 @@
    background-color: #97ca9b5e;
 }
 
+.nameCell {
+   width: auto;
+   max-width: 80px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
 .tableCell {
-   font-weight: 500;
+   font-weight: 600;
    text-align: left;
    padding-left: 0.5rem;
-   border-bottom: solid 1.5px rgba(156, 167, 160, 0.582);
+   border-bottom: solid 1.5px rgba(126, 134, 129, 0.356);
+   font-size: 14.3px;
 }
 
 .actionButtons {
    gap: 0.5rem;
-   border-bottom: solid 1.5px rgba(156, 167, 160, 0.582);
+   border-bottom: solid 1.5px rgba(126, 134, 129, 0.356);
 }
 
 .actionButton {
@@ -43,7 +51,7 @@
    max-width: 180px;
    overflow: hidden;
    text-overflow: ellipsis;
-   font-size: 14px;
+   font-size: 13.5px;
    font-weight: 600;
    color: #707070;
 }
