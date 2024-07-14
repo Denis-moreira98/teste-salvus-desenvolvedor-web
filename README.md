@@ -1,7 +1,5 @@
 # Salvus - Desafio Técnico Desenvolvedor Web
 
-## Descrição do Desafio
-
 ### Backend
 
 Desenvolvimento de uma API RESTful utilizando Node.js e Express para gerenciar operações CRUD (Create, Read, Update, Delete) em uma entidade chamada "Produtos". Cada produto é definido pelos campos: id, nome, descrição, preço e data de criação.
@@ -24,19 +22,11 @@ Desenvolvimento de uma aplicação frontend utilizando React.js para consumir a 
 ### Requisitos Implementados:
 
 -  Gerenciamento de Estado com Hooks: Utilização dos hooks do React para gerenciar o estado da aplicação, incluindo o uso de `useContext` para realizar requisições e compartilhar informações dos produtos no estado global.
-
 -  Implementação de formulários para adicionar e atualizar produtos com validação de campos, utilizando `react-hook-form` com `zod.`
 -  Adição de feedback visual para o usuário, como loading spinners, mensagens de sucesso/erro com `react-toast`.
 
-### Integração e Deploy
 
-Integração da aplicação frontend com a API backend e deploy das duas partes (frontend e backend) utilizando um serviço de hospedagem gratuito, como Heroku para o backend e Vercel ou Netlify para o frontend.
-
-### Requisitos Implementados:
-
--  Configuração do Git para versionamento do código. Criação de um repositório no GitHub e commits regulares com mensagens claras.
-
-## Para acessar a aplicação de deployada
+## Para acessar a aplicação deployada
 
 ### Frontend
 
