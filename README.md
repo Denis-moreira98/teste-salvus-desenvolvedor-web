@@ -26,7 +26,7 @@ Desenvolvimento de uma aplicação frontend utilizando React.js para consumir a 
 -  Adição de feedback visual para o usuário, como loading spinners, mensagens de sucesso/erro com `react-toast`.
 
 
-## Para acessar a aplicação deployada
+## Para acessar a aplicação enm produção
 
 ### Frontend
 
@@ -148,13 +148,13 @@ ou
 yarn run dev
 ```
 
-### Acesse no navegador
+### Para acessar o Frontend, acesse essa URL no navegador
 
 ```bash
 http://localhost:5173
 ```
 
-### Caso queira acessar as rotas da API
+### Para acessar Api utilize
 
 ```bash
 http://localhost:3000
