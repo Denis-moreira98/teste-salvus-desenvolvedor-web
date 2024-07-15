@@ -26,7 +26,7 @@ Desenvolvimento de uma aplicação frontend utilizando React.js para consumir a 
 -  Adição de feedback visual para o usuário, como loading spinners, mensagens de sucesso/erro com `react-toast`.
 
 
-## Para acessar a aplicação enm produção
+## Para acessar a aplicação em produção
 
 ### Frontend
 
