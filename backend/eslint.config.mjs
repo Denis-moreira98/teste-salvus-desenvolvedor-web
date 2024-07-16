@@ -1,48 +1,10 @@
 import globals from "globals";
-import jsPlugin from "@eslint/js";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
+import pluginJs from "@eslint/js";
+import tseslint from "typescript-eslint";
 
 export default [
-   {
-      files: ["**/*.ts", "**/*.tsx"],
-      languageOptions: {
-         parser: tsParser,
-         parserOptions: {
-            ecmaVersion: 2020,
-            sourceType: "module",
-            project: "./tsconfig.json",
-         },
-         globals: {
-            ...globals.node,
-            ...globals.browser,
-         },
-      },
-      plugins: {
-         "@typescript-eslint": tsPlugin,
-      },
-      rules: {
-         ...tsPlugin.configs.recommended.rules,
-         "@typescript-eslint/no-unused-vars": [
-            "error",
-            { argsIgnorePattern: "^_" },
-         ],
-      },
-   },
-   {
-      files: ["**/*.{js,mjs}"],
-      languageOptions: {
-         parserOptions: {
-            ecmaVersion: 2020,
-            sourceType: "module",
-         },
-         globals: {
-            ...globals.node,
-            ...globals.browser,
-         },
-      },
-      rules: {
-         ...jsPlugin.configs.recommended.rules,
-      },
-   },
+   { files: ["**/*.{js,mjs,cjs,ts}"] },
+   { languageOptions: { globals: globals.node } },
+   pluginJs.configs.recommended,
+   ...tseslint.configs.recommended,
 ];
