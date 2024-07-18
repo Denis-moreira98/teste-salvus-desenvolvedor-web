@@ -64,12 +64,13 @@ Depois de clonar o repositório, navegue até o diretório do projeto:
 cd teste-salvus-desenvolvedor-web
 ```
 
+## Instalando as dependências </br>
+
+Acesse o diretório do backend
+
 ```bash
 cd backend
 ```
-
-## Instalando as dependências </br>
-
 Para instalar as dependências do projeto, execute:
 
 ```bash
@@ -82,7 +83,7 @@ ou
 yarn add
 ```
 
-Faça o mesmo para o Frontend:
+Acesse o diretório do frontend
 
 ```bash
 cd ..
@@ -91,7 +92,7 @@ cd ..
 ```bash
 cd frontend
 ```
-
+Execute:
 ```bash
 npm install
 ```
@@ -106,7 +107,7 @@ yarn add
 
 Tanto na pasta raiz do backend quanto no frontend, há um arquivo `.env.example.`
 
-É necessario renomear o arquivo para `.env`
+É necessario renomear ambos arquivo para `.env`
 
 ### Backend
 
@@ -163,10 +164,12 @@ http://localhost:3000
 ### Rotas da API
 
 -  POST /products: Cria um novo produto. </br>
+    - Utilize esse payload: </br>
    ![image](https://github.com/user-attachments/assets/50e28d4a-8c6b-4c9e-ae3d-7d29917679e2)
 -  GET /products: Retorna todos os produtos.
 -  GET /products/:id: Retorna um produto específico pelo ID.
 -  PUT /products/:id: Atualiza um produto específico pelo ID. </br>
+    - Utilize esse payload: </br>
    ![image](https://github.com/user-attachments/assets/50e28d4a-8c6b-4c9e-ae3d-7d29917679e2)
 -  DELETE /products/:id: Deleta um produto específico pelo ID.
 
